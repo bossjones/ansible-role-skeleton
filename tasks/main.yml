@@ -1,0 +1,5 @@
+---
+- name: ensure dummy file is present
+  copy:
+    dest: /tmp/dummy_file
+    content: "dummy"
