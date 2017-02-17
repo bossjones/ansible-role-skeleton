@@ -15,6 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Disable basic file sync.
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
+
+  # Python isn't present on Ubuntu 16.04
+  config.vm.provision "shell", inline: "sudo apt-get install -y python"
+
   # Ansible.
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "vagrant.yml"
@@ -32,9 +36,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "xenial" do |xenial|
     xenial.vm.hostname = "xenial"
     xenial.vm.box = "ubuntu/xenial64"
-
-    # Python isn't present on Ubuntu 16.04
-    xenial.vm.provision "shell", inline: "sudo apt-get install -y python"
   end
 
   # Debian Wheezy
