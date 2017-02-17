@@ -15,7 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Disable basic file sync.
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
-
   # Python isn't present on Ubuntu 16.04
   config.vm.provision "shell", inline: "sudo apt-get install -y python"
 
