@@ -2,11 +2,7 @@
 
 [![Build Status](https://travis-ci.org/systemli/ansible-role-skeleton.svg?branch=master)](https://travis-ci.org/systemli/ansible-role-skeleton) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-skeleton-blue.svg)](https://galaxy.ansible.com/systemli/skeleton/)
 
-This role contains all basic information we use to develop and test Ansible roles. You can easily use this skeleton to start developing new roles.
-
-## Why
-
-We try to open source as much as possible how we build our infrastructure and deploy services. To maintain a bunch of roles we decided to reuse the testing and development process. For this case we store this information in this skeleton and update our roles when we update the skeleton.
+We try to open source as much as possible of our infrastructure and services. This skeleton contains all basic information we use to develop and test [Ansible](https://www.ansible.com/) roles. You can easily use it to start developing new roles or add testing to old ones.
 
 ## Usage
 
@@ -15,6 +11,18 @@ We try to open source as much as possible how we build our infrastructure and de
 
     # update an existing role
     ./update-role.sh /path/to/role
+
+## Testing
+
+Make sure your user is in the `docker` group. To only test your current setup, do
+
+    molecule test
+
+To test different versions of ansible, do
+
+    tox
+
+If your role depends on other roles from [Ansible Galaxy](https://galaxy.ansible.com/), uncomment the dependency lines in `molecule.yml` and add the dependencies in `tests/requirements.yml`.
 
 ## License
 

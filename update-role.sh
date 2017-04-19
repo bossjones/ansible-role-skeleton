@@ -26,5 +26,3 @@ for file in $present; do
 done
 
 perl -p -i -e "s/$SKELETON_NAME/$ROLE_NAME/" $ROLE_DIR/README.md $ROLE_DIR/molecule.yml $ROLE_DIR/tests/test.yml
-
-echo -n "If you use dependencies, such as ansible galaxy, uncomment the dependency lines in molecule.yml and add the dependencies in tests/requirements.yml\n"
