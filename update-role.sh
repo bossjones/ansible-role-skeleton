@@ -25,4 +25,4 @@ for file in $present; do
   fi
 done
 
-perl -p -i -e "s/$SKELETON_NAME/$ROLE_NAME/" $ROLE_DIR/README.md $ROLE_DIR/molecule.yml $ROLE_DIR/tests/test.yml
+perl -p -i -e "s/$SKELETON_NAME/$ROLE_NAME/" $ROLE_DIR/README.md $ROLE_DIR/molecule/default/playbook.yml $ROLE_DIR/molecule/default/tests/test.yml
