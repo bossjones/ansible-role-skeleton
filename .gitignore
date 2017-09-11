@@ -57,6 +57,7 @@ tramp
 *_archive
 
 # Testing files
+molecule/*/.molecule
 .molecule/
 .cache
 .molecule
